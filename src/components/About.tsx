@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Palette, FileText, Megaphone, Laptop } from 'lucide-react';
+import { Palette, FileText, Megaphone, Laptop, Download } from 'lucide-react';
 
 const About = () => {
   const scrollToSection = (id: string) => {
@@ -53,12 +53,15 @@ const About = () => {
               When I'm not optimizing campaigns, I'm exploring the latest in AI, content trends, and digital branding.
             </p>
             
-            <button
-              onClick={() => window.open('/resume.pdf', '_blank')}
-              className="btn-secondary mt-4"
+            <a
+              href="https://drive.google.com/file/d/10N69wfvjrUUM3LtiztuzH6b4Usgqgy1q/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary mt-4 inline-flex items-center gap-2"
             >
+              <Download className="h-4 w-4" />
               Download My Resume
-            </button>
+            </a>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
