@@ -80,10 +80,16 @@ const Contact = () => {
               </div>
               
               <div className="mt-8 flex items-center space-x-4">
-                <a href="#" className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full text-white transition-colors">
+                <a href="https://www.linkedin.com/in/pilla-manohar-492058256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                   className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full text-white transition-colors"
+                   target="_blank"
+                   rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="#" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors">
+                <a href="https://www.instagram.com/mr.manohar_007?igsh=dHlpY3dscmNtbDF1" 
+                   className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors"
+                   target="_blank"
+                   rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>
