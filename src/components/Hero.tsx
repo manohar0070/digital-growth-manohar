@@ -42,12 +42,12 @@ const Hero = () => {
           
           <div className="w-full md:w-1/2 flex justify-center md:justify-end animate-slide-up">
             <div className="relative">
-              {/* Profile image with decorative elements */}
               <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-marketing-500 to-marketing-700 rounded-full overflow-hidden shadow-xl">
-                {/* Replace with actual profile image when available */}
-                <div className="w-full h-full flex items-center justify-center text-white text-lg font-medium">
-                  Digital Marketing Expert
-                </div>
+                <img 
+                  src="/lovable-uploads/4937df5e-6a98-4682-807d-8c7d2d02a37d.png" 
+                  alt="Manohar - Digital Marketing Expert" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               {/* Decorative elements */}
