@@ -13,7 +13,7 @@ const Services = () => {
     {
       icon: <Search className="h-10 w-10 text-marketing-600" />,
       title: 'SEO (On-Page & Off-Page)',
-      description: 'Improve your website's visibility with keyword optimization, backlinks, and technical SEO.',
+      description: 'Improve your website\'s visibility with keyword optimization, backlinks, and technical SEO.',
       pricing: 'Starting from ₹2,500'
     },
     {
