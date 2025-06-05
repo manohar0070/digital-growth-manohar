@@ -54,7 +54,7 @@ const About = () => {
             </p>
             
             <a
-              href="https://drive.google.com/file/d/10N69wfvjrUUM3LtiztuzH6b4Usgqgy1q/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/18G9zJztwoE-MAtwmvbO1txCMQFBL-NMO/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary mt-4 inline-flex items-center gap-2"
