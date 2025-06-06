@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, User, MessageSquare, Send, Linkedin, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
@@ -108,6 +109,9 @@ const Contact = () => {
                 <a href="https://www.instagram.com/mr.manohar_007?igsh=dHlpY3dscmNtbDF1" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
+                <a href="https://www.instagram.com/growthzone07?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </div>
@@ -131,3 +135,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
