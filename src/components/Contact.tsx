@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, User, MessageSquare, Send, Linkedin, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
@@ -6,7 +5,6 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,28 +12,34 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast.success('Thanks for your message! I\'ll get back to you soon.', {
-        description: 'Your message has been sent successfully.',
+        description: 'Your message has been sent successfully.'
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
       setIsSubmitting(false);
     }, 1000);
   };
-
-  return (
-    <section id="contact" className="bg-gray-50">
+  return <section id="contact" className="bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="section-title">Contact</h2>
@@ -44,7 +48,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="<div style=\"width:100%;height:500px;\" data-fillout-id=\"8Q2dhL6DY7us\" data-fillout-embed-type=\"standard\" data-fillout-inherit-parameters data-fillout-dynamic-resize></div><script src=\"https://server.fillout.com/embed/v1/\"></script>">
           <div className="space-y-6">
             <div className="card">
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
@@ -80,35 +84,24 @@ const Contact = () => {
               </div>
               
               <div className="mt-8 flex items-center space-x-4">
-                <a href="https://www.linkedin.com/in/pilla-manohar-492058256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-                   className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full text-white transition-colors"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/pilla-manohar-492058256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/mr.manohar_007?igsh=dHlpY3dscmNtbDF1" 
-                   className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a href="https://www.instagram.com/mr.manohar_007?igsh=dHlpY3dscmNtbDF1" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
           
-          <div 
-            style={{width:'100%', height:'500px'}} 
-            data-fillout-id="8Q2dhL6DY7us" 
-            data-fillout-embed-type="standard" 
-            data-fillout-inherit-parameters 
-            data-fillout-dynamic-resize
-          >
+          <div style={{
+          width: '100%',
+          height: '500px'
+        }} data-fillout-id="8Q2dhL6DY7us" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize>
             <script src="https://server.fillout.com/embed/v1/"></script>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
