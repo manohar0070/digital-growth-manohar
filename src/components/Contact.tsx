@@ -96,57 +96,14 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="card">
-            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="name">Name</Label>
-                <Input 
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              
-              <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="email">Email</Label>
-                <Input 
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Your email"
-                  required
-                />
-              </div>
-              
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message"
-                  className="min-h-[120px]"
-                  required
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-marketing-600 hover:bg-marketing-700" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Submit'}
-                <Send className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
+          <div 
+            style={{width:'100%', height:'500px'}} 
+            data-fillout-id="8Q2dhL6DY7us" 
+            data-fillout-embed-type="standard" 
+            data-fillout-inherit-parameters 
+            data-fillout-dynamic-resize
+          >
+            <script src="https://server.fillout.com/embed/v1/"></script>
           </div>
         </div>
       </div>
