@@ -78,12 +78,6 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            🖼 Additional portfolio samples available upon request
-          </p>
-        </div>
       </div>
     </section>
   );
