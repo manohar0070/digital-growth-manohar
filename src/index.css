@@ -63,11 +63,11 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-marketing-600 rounded-md shadow-sm hover:bg-marketing-700 transition-colors duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-marketing-600 rounded-md shadow-lg hover:bg-marketing-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-marketing-700 bg-white border border-marketing-300 rounded-md shadow-sm hover:bg-gray-50 transition-colors duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-marketing-700 bg-white border border-marketing-300 rounded-md shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
   
   .section-title {
@@ -79,6 +79,6 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+    @apply bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
   }
 }

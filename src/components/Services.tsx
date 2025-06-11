@@ -34,7 +34,7 @@ const Services = () => {
   return (
     <section id="services" className="bg-gray-50">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="section-title">Services</h2>
           <p className="section-subtitle">
             Expert digital marketing solutions to help your business grow
@@ -45,9 +45,10 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="card flex flex-col h-full transition-transform duration-300 hover:-translate-y-2"
+              className="card flex flex-col h-full transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl animate-slide-up shadow-lg"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="mb-4">{service.icon}</div>
+              <div className="mb-4 transform transition-transform duration-300 hover:scale-110">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
             </div>

@@ -31,7 +31,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="section-title">Portfolio</h2>
           <p className="section-subtitle">
             Case studies showcasing my work and results
@@ -42,36 +42,38 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="card overflow-hidden group border border-gray-200"
+              className="card overflow-hidden group border border-gray-200 transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl animate-slide-up shadow-lg"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <AspectRatio ratio={16/9}>
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   />
                 </AspectRatio>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-marketing-600 transition-colors duration-300">{project.title}</h3>
                 
                 <div className="space-y-2 mb-4">
-                  <p className="text-sm">
+                  <p className="text-sm transform transition-transform duration-300 group-hover:translate-x-1">
                     <span className="font-medium text-gray-700">Objective:</span> {project.objective}
                   </p>
-                  <p className="text-sm">
+                  <p className="text-sm transform transition-transform duration-300 group-hover:translate-x-1">
                     <span className="font-medium text-gray-700">Tools Used:</span> {project.tools}
                   </p>
-                  <p className="text-sm">
+                  <p className="text-sm transform transition-transform duration-300 group-hover:translate-x-1">
                     <span className="font-medium text-gray-700">Result:</span> {project.result}
                   </p>
                 </div>
                 
                 <div className="mt-auto pt-2">
-                  <button className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium">
+                  <button className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium transition-all duration-300 group-hover:translate-x-2">
                     View Details
-                    <ArrowRight className="ml-1 h-4 w-4" />
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 </div>
               </div>

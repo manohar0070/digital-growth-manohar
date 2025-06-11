@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, User, MessageSquare, Send, Linkedin, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
@@ -60,7 +59,7 @@ const Contact = () => {
   return (
     <section id="contact" className="bg-gray-50">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="section-title">Contact</h2>
           <p className="section-subtitle">
             Let's work together! I'd love to hear from you.
@@ -68,33 +67,33 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <div className="card">
+          <div className="space-y-6 animate-slide-up">
+            <div className="card transition-all duration-500 hover:-translate-y-2 hover:shadow-xl shadow-lg">
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
               
               <div className="space-y-4">
-                <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-marketing-600 mt-1 mr-3" />
+                <div className="flex items-start group">
+                  <Mail className="h-5 w-5 text-marketing-600 mt-1 mr-3 transition-transform duration-300 group-hover:scale-110" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:manoharnaidu0007@gmail.com" className="text-gray-600 hover:text-marketing-600">
+                    <a href="mailto:manoharnaidu0007@gmail.com" className="text-gray-600 hover:text-marketing-600 transition-colors duration-300">
                       manoharnaidu0007@gmail.com
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <Phone className="h-5 w-5 text-marketing-600 mt-1 mr-3" />
+                <div className="flex items-start group">
+                  <Phone className="h-5 w-5 text-marketing-600 mt-1 mr-3 transition-transform duration-300 group-hover:scale-110" />
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <a href="https://wa.me/918297391899" className="text-gray-600 hover:text-marketing-600">
+                    <a href="https://wa.me/918297391899" className="text-gray-600 hover:text-marketing-600 transition-colors duration-300">
                       +91 82973 91899
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <User className="h-5 w-5 text-marketing-600 mt-1 mr-3" />
+                <div className="flex items-start group">
+                  <User className="h-5 w-5 text-marketing-600 mt-1 mr-3 transition-transform duration-300 group-hover:scale-110" />
                   <div>
                     <p className="font-medium">Name</p>
                     <p className="text-gray-600">Pilla Manohar</p>
@@ -103,20 +102,20 @@ const Contact = () => {
               </div>
               
               <div className="mt-8 flex items-center space-x-4">
-                <a href="https://www.linkedin.com/in/pilla-manohar-492058256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/pilla-manohar-492058256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full text-white transition-all duration-300 hover:scale-110 hover:shadow-lg" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/mr.manohar_007?igsh=dHlpY3dscmNtbDF1" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/mr.manohar_007?igsh=dHlpY3dscmNtbDF1" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-all duration-300 hover:scale-110 hover:shadow-lg" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/growthzone07?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/growthzone07?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="bg-pink-500 hover:bg-pink-600 p-2 rounded-full text-white transition-all duration-300 hover:scale-110 hover:shadow-lg" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
           
-          <div className="card">
+          <div className="card animate-slide-up transition-all duration-500 hover:shadow-xl shadow-lg" style={{ animationDelay: '200ms' }}>
             <div 
               style={{
                 width: '100%',
@@ -135,4 +134,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

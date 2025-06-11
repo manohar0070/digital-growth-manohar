@@ -36,7 +36,7 @@ const About = () => {
   return (
     <section id="about" className="bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
             Learn more about my background and expertise in digital marketing
@@ -44,12 +44,12 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <p className="text-lg text-gray-700">
+          <div className="space-y-6 animate-slide-up">
+            <p className="text-lg text-gray-700 transform transition-all duration-500 hover:translate-x-2">
               I'm Manohar, a results-driven digital marketer with a strong foundation in eCommerce, content creation, advertising, and SEO. Over the past year, I've worked with growing businesses to elevate their online presence through data-backed strategies and creative execution.
             </p>
             
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 transform transition-all duration-500 hover:translate-x-2">
               When I'm not optimizing campaigns, I'm exploring the latest in AI, content trends, and digital branding.
             </p>
             
@@ -57,7 +57,7 @@ const About = () => {
               href="https://drive.google.com/file/d/18G9zJztwoE-MAtwmvbO1txCMQFBL-NMO/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary mt-4 inline-flex items-center gap-2"
+              className="btn-secondary mt-4 inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-md"
             >
               <Download className="h-4 w-4" />
               Download My Resume
@@ -68,13 +68,14 @@ const About = () => {
             {skills.map((skill, index) => (
               <div 
                 key={index} 
-                className="card hover:border-marketing-300 group"
+                className="card hover:border-marketing-300 group transition-all duration-500 hover:-translate-y-3 hover:shadow-xl animate-slide-up shadow-lg"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="mb-4">{skill.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-marketing-600 transition-colors">
+                <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">{skill.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-marketing-600 transition-colors duration-300">
                   {skill.title}
                 </h3>
-                <p className="text-gray-600">{skill.description}</p>
+                <p className="text-gray-600 transform transition-transform duration-300 group-hover:translate-x-1">{skill.description}</p>
               </div>
             ))}
           </div>
