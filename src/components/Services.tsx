@@ -7,32 +7,27 @@ const Services = () => {
     {
       icon: <Facebook className="h-10 w-10 text-marketing-600" />,
       title: 'Meta Ads Management',
-      description: 'Run highly targeted ad campaigns on Facebook & Instagram to drive conversions, traffic, and engagement.',
-      pricing: 'Starting from ₹3,000/month'
+      description: 'Run highly targeted ad campaigns on Facebook & Instagram to drive conversions, traffic, and engagement.'
     },
     {
       icon: <Search className="h-10 w-10 text-marketing-600" />,
       title: 'SEO (On-Page & Off-Page)',
-      description: 'Improve your website\'s visibility with keyword optimization, backlinks, and technical SEO.',
-      pricing: 'Starting from ₹2,500'
+      description: 'Improve your website\'s visibility with keyword optimization, backlinks, and technical SEO.'
     },
     {
       icon: <FileText className="h-10 w-10 text-marketing-600" />,
       title: 'Content & Blog Writing',
-      description: 'High-quality, SEO-friendly content to engage your audience and improve search rankings.',
-      pricing: 'Starting from ₹1/word'
+      description: 'High-quality, SEO-friendly content to engage your audience and improve search rankings.'
     },
     {
       icon: <Tag className="h-10 w-10 text-marketing-600" />,
       title: 'Product Description Writing',
-      description: 'Turn product features into irresistible benefits with clear, compelling descriptions.',
-      pricing: 'Starting from ₹150/product'
+      description: 'Turn product features into irresistible benefits with clear, compelling descriptions.'
     },
     {
       icon: <Instagram className="h-10 w-10 text-marketing-600" />,
       title: 'Social Media Management',
-      description: 'Plan, post, and grow your presence across platforms with engaging visuals and captions.',
-      pricing: 'Starting from ₹4,000/month'
+      description: 'Plan, post, and grow your presence across platforms with engaging visuals and captions.'
     }
   ];
 
@@ -55,9 +50,6 @@ const Services = () => {
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
-              <div className="mt-auto">
-                <p className="font-medium text-marketing-700">{service.pricing}</p>
-              </div>
             </div>
           ))}
         </div>
