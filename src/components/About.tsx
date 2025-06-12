@@ -46,7 +46,7 @@ const About = () => {
     },
     {
       icon: <Rocket className="h-4 w-4" />,
-      title: 'Founded Furi AI School & Conducted Weekly AI Workshops',
+      title: 'Furi media services as a Digital Marketing Executive',
       period: 'April 2025 – Present'
     },
     {
