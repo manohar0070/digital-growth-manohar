@@ -17,7 +17,7 @@ const Portfolio = () => {
       objective: "Boost search visibility and improve Google ranking",
       tools: "SEO optimization, Content Management, Google Search Console",
       result: "Product listings with compelling descriptions and improved SEO performance",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/20d545da-7864-4525-97cc-bc8f7f9a4308.png",
       period: "Jan 2025 – March 2025"
     },
     {
