@@ -10,7 +10,8 @@ const Portfolio = () => {
       objective: "Drive organic traffic and boost sales",
       tools: "Shopify, Meta Ads, Canva, Google Search Console",
       result: "40% increase in organic traffic in 3 months",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/67a713b8-d260-4292-b835-e69ea6058362.png",
+      link: "https://intoobox.com/"
     },
     {
       title: "Blog Content for Health Brand",
@@ -71,10 +72,22 @@ const Portfolio = () => {
                 </div>
                 
                 <div className="mt-auto pt-2">
-                  <button className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium transition-all duration-300 group-hover:translate-x-2">
-                    View Details
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </button>
+                  {project.link ? (
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium transition-all duration-300 group-hover:translate-x-2"
+                    >
+                      Visit Website
+                      <ExternalLink className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+                  ) : (
+                    <button className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium transition-all duration-300 group-hover:translate-x-2">
+                      View Details
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
