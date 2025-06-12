@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -14,11 +13,12 @@ const Portfolio = () => {
       link: "https://intoobox.com/"
     },
     {
-      title: "Blog Content for Health Brand",
-      objective: "Build authority and SEO traffic",
-      tools: "WordPress, SurferSEO, Grammarly",
-      result: "25+ blogs published, avg. 1.5k views/month",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+      title: "Worked on AWSpeechless.com – Freelance Project",
+      objective: "Boost search visibility and improve Google ranking",
+      tools: "SEO optimization, Content Management, Google Search Console",
+      result: "Product listings with compelling descriptions and improved SEO performance",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+      period: "Jan 2025 – March 2025"
     },
     {
       title: "Product Description Overhaul for Clothing Line",
@@ -58,6 +58,10 @@ const Portfolio = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-marketing-600 transition-colors duration-300">{project.title}</h3>
+                
+                {project.period && (
+                  <p className="text-sm text-gray-500 mb-3 font-medium">{project.period}</p>
+                )}
                 
                 <div className="space-y-2 mb-4">
                   <p className="text-sm transform transition-transform duration-300 group-hover:translate-x-1">
