@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Palette, FileText, Megaphone, Laptop, Download, GraduationCap, Briefcase, Rocket, Bot } from 'lucide-react';
+import AITools from './AITools';
 
 const About = () => {
   const scrollToSection = (id: string) => {
@@ -140,6 +140,9 @@ const About = () => {
             </ul>
           </div>
         </div>
+
+        {/* AI Tools Section */}
+        <AITools />
       </div>
     </section>
   );
