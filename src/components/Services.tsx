@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Facebook, Search, FileText, Tag, Instagram } from 'lucide-react';
+import { Facebook, Search, FileText, Tag, Instagram, Palette } from 'lucide-react';
 
 const Services = () => {
   const services = [
@@ -28,6 +27,11 @@ const Services = () => {
       icon: <Instagram className="h-10 w-10 text-marketing-600" />,
       title: 'Social Media Management',
       description: 'Plan, post, and grow your presence across platforms with engaging visuals and captions.'
+    },
+    {
+      icon: <Palette className="h-10 w-10 text-marketing-600" />,
+      title: 'Design Services',
+      description: 'Create stunning visuals that communicate your brand story — from social media posters and brochures to portfolios and pitch decks. Custom-crafted designs that leave a lasting impression.'
     }
   ];
 
