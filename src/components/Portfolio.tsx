@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -21,11 +22,12 @@ const Portfolio = () => {
       period: "Jan 2025 – March 2025"
     },
     {
-      title: "Product Description Overhaul for Clothing Line",
-      objective: "Improve conversion rate",
-      tools: "Shopify, Copywriting Frameworks",
-      result: "+15% add-to-cart rate after rewrite",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+      title: "Khaalis Solar – Social Media Launch & Content Creation",
+      objective: "Build brand presence & drive awareness for clean energy",
+      tools: "Canva, InVideo AI, Copywriting Techniques",
+      result: "+25% engagement rate growth in 4 weeks",
+      image: "/lovable-uploads/49337316-f384-41a1-b280-87b437e374f4.png",
+      link: "https://www.instagram.com/khaalis.solar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     }
   ];
 
