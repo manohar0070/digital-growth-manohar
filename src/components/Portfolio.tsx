@@ -28,6 +28,14 @@ const Portfolio = () => {
       result: "+25% engagement rate growth in 4 weeks",
       image: "/lovable-uploads/49337316-f384-41a1-b280-87b437e374f4.png",
       link: "https://www.instagram.com/khaalis.solar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    },
+    {
+      title: "Creative Design Projects – Visual Branding for Multiple Clients",
+      objective: "Elevate brand identity with compelling and professional designs",
+      tools: "Photoshop, Canva, Illustrator, After Effects",
+      result: "Delivered 100+ custom designs including social media creatives, brochures, portfolios, and pitch decks — enhancing client brand consistency and engagement",
+      image: "/placeholder.svg",
+      viewText: "View Designs"
     }
   ];
 
@@ -90,7 +98,7 @@ const Portfolio = () => {
                     </a>
                   ) : (
                     <button className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium transition-all duration-300 group-hover:translate-x-2">
-                      View Details
+                      {project.viewText || "View Details"}
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   )}
