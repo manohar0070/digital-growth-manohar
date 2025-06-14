@@ -113,28 +113,28 @@ const aiTools: Tool[] = [
 
 const AITools = () => {
   return (
-    <div className="bg-gray-50 py-12 mt-16 rounded-lg">
-      <div className="container mx-auto">
+    <div className="bg-gray-50 py-8 md:py-12 mt-8 md:mt-16 rounded-lg mx-2 md:mx-0">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Section Title */}
-        <div className="text-center mb-8 animate-fade-in">
-          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+        <div className="text-center mb-6 md:mb-8 animate-fade-in">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-gray-900">
             🚀 AI Tools I Use
           </h3>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-marketing-500 to-marketing-600 mx-auto rounded-full mb-3"></div>
-          <p className="text-gray-600 text-sm max-w-lg mx-auto">
+          <div className="w-12 md:w-16 h-0.5 bg-gradient-to-r from-marketing-500 to-marketing-600 mx-auto rounded-full mb-2 md:mb-3"></div>
+          <p className="text-gray-600 text-xs md:text-sm max-w-lg mx-auto px-4">
             Essential AI tools for productivity and creativity
           </p>
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3 md:gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 md:gap-3 lg:gap-4">
           {aiTools.map((tool, index) => (
             <a
               key={index}
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center p-3 rounded-xl bg-white border border-gray-200 hover:border-marketing-300 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up shadow-sm"
+              className="group flex flex-col items-center p-2 md:p-3 rounded-xl bg-white border border-gray-200 hover:border-marketing-300 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up shadow-sm"
               style={{
                 animationDelay: `${index * 50}ms`,
                 animationFillMode: 'both'
@@ -142,11 +142,11 @@ const AITools = () => {
               title={tool.name}
             >
               {/* Logo Container */}
-              <div className="w-10 h-10 rounded-full flex items-center justify-center mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-110 overflow-hidden border border-gray-100 group-hover:border-marketing-200">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mb-1 md:mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-110 overflow-hidden border border-gray-100 group-hover:border-marketing-200">
                 <img 
                   src={tool.logo} 
                   alt={`${tool.name} logo`}
-                  className="w-6 h-6 object-contain transition-all duration-300"
+                  className="w-5 h-5 md:w-6 md:h-6 object-contain transition-all duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
@@ -160,7 +160,7 @@ const AITools = () => {
               </div>
               
               {/* Tool Name */}
-              <span className="text-xs font-medium text-center text-gray-600 group-hover:text-marketing-700 transition-colors duration-300 leading-tight max-w-full truncate">
+              <span className="text-xs font-medium text-center text-gray-600 group-hover:text-marketing-700 transition-colors duration-300 leading-tight max-w-full truncate px-1">
                 {tool.name}
               </span>
             </a>
@@ -168,8 +168,8 @@ const AITools = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center">
-          <span className="text-gray-500 text-xs">
+        <div className="mt-6 md:mt-8 text-center">
+          <span className="text-gray-500 text-xs px-4">
             Constantly exploring new AI innovations
           </span>
         </div>
