@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -32,9 +31,10 @@ const Portfolio = () => {
     {
       title: "Creative Design Projects – Visual Branding for Multiple Clients",
       objective: "Elevate brand identity with compelling and professional designs",
-      tools: "Photoshop, Canva, Illustrator, After Effects",
-      result: "Delivered 100+ custom designs including social media creatives, brochures, portfolios, and pitch decks — enhancing client brand consistency and engagement",
-      image: "/placeholder.svg",
+      tools: "Photoshop, Canva",
+      result: "Delivered custom designs including social media creatives, brochures, portfolios, and pitch decks — enhancing client brand consistency and engagement",
+      image: "/lovable-uploads/a10418f0-f401-4f33-89ca-39051f1b8fb5.png",
+      link: "https://drive.google.com/drive/folders/1d9XxfAzRhewdNKI8o7IJ9Ngsqv_Qiobo?usp=sharing",
       viewText: "View Designs"
     }
   ];
@@ -93,7 +93,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-marketing-600 hover:text-marketing-800 font-medium transition-all duration-300 group-hover:translate-x-2"
                     >
-                      Visit Website
+                      {project.viewText ? project.viewText : "Visit Website"}
                       <ExternalLink className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                   ) : (
