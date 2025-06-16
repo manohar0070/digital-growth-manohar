@@ -112,6 +112,50 @@ const aiTools: Tool[] = [
   },
 ];
 
+const ToolCard = ({ tool }: { tool: typeof aiTools[0] }) => {
+  return (
+    <a
+      href={tool.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group cursor-pointer"
+      title={tool.name}
+    >
+      <div className="flex flex-col items-center space-y-2">
+        <div className="
+          w-14 h-14 rounded-full bg-white border border-gray-200
+          flex items-center justify-center
+          shadow-sm
+          transition-all duration-300 ease-out
+          group-hover:scale-105 group-hover:shadow-md group-hover:border-purple-300
+          group-hover:-translate-y-1
+          overflow-hidden
+          p-2
+        ">
+          <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-100">
+            <img 
+              src={tool.logo} 
+              alt={`${tool.name} logo`}
+              className="w-6 h-6 object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
+                }
+              }}
+            />
+          </div>
+        </div>
+        <span className="text-xs font-medium text-gray-700 text-center leading-tight max-w-full truncate px-1">
+          {tool.name}
+        </span>
+      </div>
+    </a>
+  );
+};
+
 const AITools = () => {
   return (
     <div className="bg-gradient-to-br from-marketing-50 to-blue-50 rounded-2xl py-12 px-6 md:px-8">
@@ -131,44 +175,12 @@ const AITools = () => {
 
         {/* Tools Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4 md:gap-6">
+          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4 md:gap-6">
             {aiTools.map((tool, index) => (
-              <a
-                key={index}
-                href={tool.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center p-3 rounded-xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up shadow-sm"
-                style={{
-                  animationDelay: `${index * 30}ms`,
-                  animationFillMode: 'both'
-                }}
-                title={tool.name}
-              >
-                {/* Logo Container */}
-                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105 overflow-hidden border border-gray-100 group-hover:border-purple-200 p-2">
-                  <div className="w-8 h-8 rounded-full overflow-hidden bg-white flex items-center justify-center border border-gray-100">
-                    <img 
-                      src={tool.logo} 
-                      alt={`${tool.name} logo`}
-                      className="w-6 h-6 object-contain transition-all duration-300"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
-                        }
-                      }}
-                    />
-                  </div>
-                </div>
-                
-                {/* Tool Name */}
-                <span className="text-xs font-medium text-center text-gray-600 group-hover:text-purple-700 transition-colors duration-300 leading-tight max-w-full truncate px-1">
-                  {tool.name}
-                </span>
-              </a>
+              <ToolCard 
+                key={index} 
+                tool={tool}
+              />
             ))}
           </div>
         </div>
