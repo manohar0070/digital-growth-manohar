@@ -83,7 +83,7 @@ const About = () => {
       <div className="group cursor-pointer">
         <div className="flex flex-col items-center space-y-2">
           <div className="
-            w-12 h-12 rounded-xl bg-white border border-gray-200
+            w-14 h-14 rounded-full bg-white border border-gray-200
             flex items-center justify-center
             shadow-sm
             transition-all duration-300 ease-out
@@ -92,21 +92,23 @@ const About = () => {
             overflow-hidden
             p-2
           ">
-            <img 
-              src={tool.imageUrl} 
-              alt={`${tool.name} logo`}
-              className="w-6 h-6 object-contain"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const parent = target.parentElement;
-                if (parent) {
-                  parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-marketing-500 to-marketing-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
-                }
-              }}
-            />
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-100">
+              <img 
+                src={tool.imageUrl} 
+                alt={`${tool.name} logo`}
+                className="w-6 h-6 object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-marketing-500 to-marketing-600 rounded-full flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
+                  }
+                }}
+              />
+            </div>
           </div>
-          <span className="text-xs font-medium text-gray-700 text-center leading-tight max-w-full truncate">
+          <span className="text-xs font-medium text-gray-700 text-center leading-tight max-w-full truncate px-1">
             {tool.name}
           </span>
         </div>

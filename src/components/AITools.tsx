@@ -146,24 +146,26 @@ const AITools = () => {
                 title={tool.name}
               >
                 {/* Logo Container */}
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105 overflow-hidden border border-gray-100 group-hover:border-purple-200 p-2">
-                  <img 
-                    src={tool.logo} 
-                    alt={`${tool.name} logo`}
-                    className="w-6 h-6 object-contain transition-all duration-300"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
-                      }
-                    }}
-                  />
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105 overflow-hidden border border-gray-100 group-hover:border-purple-200 p-2">
+                  <div className="w-8 h-8 rounded-full overflow-hidden bg-white flex items-center justify-center border border-gray-100">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-6 h-6 object-contain transition-all duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
+                        }
+                      }}
+                    />
+                  </div>
                 </div>
                 
                 {/* Tool Name */}
-                <span className="text-xs font-medium text-center text-gray-600 group-hover:text-purple-700 transition-colors duration-300 leading-tight max-w-full truncate">
+                <span className="text-xs font-medium text-center text-gray-600 group-hover:text-purple-700 transition-colors duration-300 leading-tight max-w-full truncate px-1">
                   {tool.name}
                 </span>
               </a>
