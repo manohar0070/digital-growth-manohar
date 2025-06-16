@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Palette, FileText, Megaphone, Laptop, Download, GraduationCap, Briefcase, Rocket, Bot } from 'lucide-react';
+import { Palette, FileText, Megaphone, Laptop, Download, GraduationCap, Briefcase, Rocket, Bot, Globe } from 'lucide-react';
 import AITools from './AITools';
 
 const About = () => {
@@ -56,6 +57,66 @@ const About = () => {
     }
   ];
 
+  const tools = [
+    { name: 'Ubersuggest', imageUrl: 'https://www.blog.123coimbatore.com/uploads/blog-images/30-03-2021_10-37-09_us.jpg' },
+    { name: 'Ahrefs', imageUrl: 'https://ahrefs.com/assets/esbuild/a-blue-RPW5GNUX.png' },
+    { name: 'SEMrush', imageUrl: 'https://cdn.brandfetch.io/semrush.com/fallback/lettermark/theme/dark/h/256/w/256/icon?c=1bfwsmEH20zzEfSNTed' },
+    { name: 'Google Analytics', imageUrl: 'https://img.freepik.com/premium-vector/google-analytics-logo_1273375-887.jpg' },
+    { name: 'Google Search Console', imageUrl: 'https://logowik.com/content/uploads/images/google-search-console4537.logowik.com.webp' },
+    { name: 'Google Ads', imageUrl: 'https://i.pinimg.com/564x/75/2b/38/752b3880473ea42b5c9e82e00dc6a2bf.jpg' },
+    { name: 'Meta Ads Manager', imageUrl: 'https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/12824360/LoaZukDKgdpYEP10QWwBQGSz2FG2.png' },
+    { name: 'Shopify', imageUrl: 'https://logowik.com/content/uploads/images/shopify-bag5181.logowik.com.webp' },
+    { name: 'WordPress', imageUrl: 'https://s.w.org/style/images/about/WordPress-logotype-wmark.png' },
+    { name: 'Yoast SEO', imageUrl: 'https://delante.co/wp-content/uploads/2022/11/yoast-seo-features.jpg' },
+    { name: 'Rank Math', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_PPoTOOFAMHuZUch_dtwf3zpFbcCWvS8bg&s' },
+    { name: 'All in One SEO', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRsP6_QcMTqaxk3qi579RcV1-7Ycl8xBrMQ&s' },
+    { name: 'Grammarly', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSh-Q3dSwHZ7dZhMyuBXjrowPbz5I9pOPrKg&s' },
+    { name: 'Google My Business', imageUrl: 'https://images.seeklogo.com/logo-png/32/1/google-my-bussines-logo-png_seeklogo-329002.png' },
+    { name: 'Facebook', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg' },
+    { name: 'Instagram', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png' },
+    { name: 'LinkedIn', imageUrl: 'https://logowik.com/content/uploads/images/329_linkedin.jpg' },
+    { name: 'WhatsApp', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg' }
+  ];
+
+  const ToolCard = ({ tool }: { tool: typeof tools[0] }) => {
+    return (
+      <div className="group cursor-pointer">
+        <div className="flex flex-col items-center space-y-2">
+          <div className="
+            w-16 h-16 rounded-full bg-white border border-gray-200
+            flex items-center justify-center
+            shadow-md shadow-black/10
+            transition-all duration-300 ease-out
+            group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-black/20
+            group-hover:-translate-y-1
+            overflow-hidden
+            p-2
+          ">
+            <div className="w-full h-full rounded-full overflow-hidden bg-gray-50 flex items-center justify-center">
+              <img 
+                src={tool.imageUrl} 
+                alt={`${tool.name} logo`}
+                className="w-full h-full object-cover rounded-full"
+                onError={(e) => {
+                  // Fallback to a colored circle with first letter if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">${tool.name.charAt(0)}</div>`;
+                  }
+                }}
+              />
+            </div>
+          </div>
+          <span className="text-xs font-medium text-gray-700 text-center px-1 leading-tight">
+            {tool.name}
+          </span>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section id="about" className="bg-white">
       <div className="container mx-auto">
@@ -105,7 +166,7 @@ const About = () => {
         </div>
 
         {/* My Journey Section */}
-        <div className="bg-gray-900 text-white rounded-lg p-8 md:p-12 animate-fade-in">
+        <div className="bg-gray-900 text-white rounded-lg p-8 md:p-12 animate-fade-in mb-16">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">My Journey</h2>
             <p className="text-lg text-gray-300">
@@ -138,6 +199,31 @@ const About = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Professional SEO & Marketing Tools Section */}
+        <div className="bg-white py-8 md:py-12 mb-8 md:mb-16">
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mb-4 shadow-md">
+              <Globe className="w-6 h-6 text-white" strokeWidth={1.5} />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Professional SEO & Marketing Tools
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our comprehensive suite of industry-leading tools designed to boost your digital presence.
+            </p>
+          </div>
+
+          {/* Tools Grid */}
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4 md:gap-6">
+              {tools.map((tool, index) => (
+                <ToolCard key={index} tool={tool} />
+              ))}
+            </div>
           </div>
         </div>
 
