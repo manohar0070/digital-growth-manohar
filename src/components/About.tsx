@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Palette, FileText, Megaphone, Laptop, Download, GraduationCap, Briefcase, Rocket, Bot, Globe } from 'lucide-react';
 import AITools from './AITools';
@@ -48,12 +47,8 @@ const About = () => {
     {
       icon: <Rocket className="h-4 w-4" />,
       title: 'Furi media services as a Digital Marketing Executive',
+      description: 'Explored 15+ AI Tools for Content, Marketing, Design & Automation',
       period: 'April 2025 – Present'
-    },
-    {
-      icon: <Bot className="h-4 w-4" />,
-      title: 'Explored 15+ AI Tools for Content, Marketing, Design & Automation',
-      period: '2025 – Present'
     }
   ];
 
@@ -195,6 +190,9 @@ const About = () => {
                     <h3 className="text-lg font-semibold mb-2 group-hover:text-marketing-400 transition-colors duration-300">
                       {item.title}
                     </h3>
+                    {item.description && (
+                      <p className="text-sm text-gray-300 mb-2">{item.description}</p>
+                    )}
                     <p className="text-sm text-gray-400">{item.period}</p>
                   </div>
                 </div>
