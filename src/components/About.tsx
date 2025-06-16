@@ -13,22 +13,22 @@ const About = () => {
 
   const skills = [
     {
-      icon: <Palette className="h-8 w-8 text-marketing-600" />,
+      icon: <Palette className="h-6 w-6 text-marketing-600" />,
       title: 'Design',
       description: 'Photoshop, Canva'
     },
     {
-      icon: <FileText className="h-8 w-8 text-marketing-600" />,
+      icon: <FileText className="h-6 w-6 text-marketing-600" />,
       title: 'Content',
       description: 'Copywriting, Product Descriptions, Blog Writing'
     },
     {
-      icon: <Megaphone className="h-8 w-8 text-marketing-600" />,
+      icon: <Megaphone className="h-6 w-6 text-marketing-600" />,
       title: 'Marketing',
       description: 'Meta Ads, On-page & Off-page SEO, Social Media'
     },
     {
-      icon: <Laptop className="h-8 w-8 text-marketing-600" />,
+      icon: <Laptop className="h-6 w-6 text-marketing-600" />,
       title: 'Tech',
       description: 'WordPress, Shopify, AI Tools'
     }
@@ -83,33 +83,30 @@ const About = () => {
       <div className="group cursor-pointer">
         <div className="flex flex-col items-center space-y-2">
           <div className="
-            w-16 h-16 rounded-full bg-white border border-gray-200
+            w-12 h-12 rounded-xl bg-white border border-gray-200
             flex items-center justify-center
-            shadow-md shadow-black/10
+            shadow-sm
             transition-all duration-300 ease-out
-            group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-black/20
+            group-hover:scale-105 group-hover:shadow-md group-hover:border-marketing-300
             group-hover:-translate-y-1
             overflow-hidden
             p-2
           ">
-            <div className="w-full h-full rounded-full overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img 
-                src={tool.imageUrl} 
-                alt={`${tool.name} logo`}
-                className="w-full h-full object-cover rounded-full"
-                onError={(e) => {
-                  // Fallback to a colored circle with first letter if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">${tool.name.charAt(0)}</div>`;
-                  }
-                }}
-              />
-            </div>
+            <img 
+              src={tool.imageUrl} 
+              alt={`${tool.name} logo`}
+              className="w-6 h-6 object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-marketing-500 to-marketing-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
+                }
+              }}
+            />
           </div>
-          <span className="text-xs font-medium text-gray-700 text-center px-1 leading-tight">
+          <span className="text-xs font-medium text-gray-700 text-center leading-tight max-w-full truncate">
             {tool.name}
           </span>
         </div>
@@ -127,13 +124,14 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+        {/* About Introduction */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6 animate-slide-up">
-            <p className="text-lg text-gray-700 transform transition-all duration-500 hover:translate-x-2">
+            <p className="text-lg text-gray-700 leading-relaxed">
               I'm Manohar, a results-driven digital marketer with a strong foundation in eCommerce, content creation, advertising, and SEO. Over the past year, I've worked with growing businesses to elevate their online presence through data-backed strategies and creative execution.
             </p>
             
-            <p className="text-lg text-gray-700 transform transition-all duration-500 hover:translate-x-2">
+            <p className="text-lg text-gray-700 leading-relaxed">
               When I'm not optimizing campaigns, I'm exploring the latest in AI, content trends, and digital branding.
             </p>
             
@@ -141,85 +139,84 @@ const About = () => {
               href="https://drive.google.com/file/d/18G9zJztwoE-MAtwmvbO1txCMQFBL-NMO/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary mt-4 inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-md"
+              className="btn-secondary mt-6 inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <Download className="h-4 w-4" />
               Download My Resume
             </a>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Skills Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {skills.map((skill, index) => (
               <div 
                 key={index} 
-                className="card hover:border-marketing-300 group transition-all duration-500 hover:-translate-y-3 hover:shadow-xl animate-slide-up shadow-lg"
+                className="bg-white border border-gray-200 rounded-xl p-6 hover:border-marketing-300 group transition-all duration-300 hover:-translate-y-2 hover:shadow-lg animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">{skill.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-marketing-600 transition-colors duration-300">
+                <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">{skill.icon}</div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-marketing-600 transition-colors duration-300">
                   {skill.title}
                 </h3>
-                <p className="text-gray-600 transform transition-transform duration-300 group-hover:translate-x-1">{skill.description}</p>
+                <p className="text-gray-600 text-sm">{skill.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* My Journey Section */}
-        <div className="bg-gray-900 text-white rounded-lg p-8 md:p-12 animate-fade-in mb-16">
-          <div className="text-center mb-8">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl p-8 md:p-12 animate-fade-in mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">My Journey</h2>
-            <p className="text-lg text-gray-300">
-              A timeline of my professional growth and AI journey
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              A timeline of my professional growth and AI exploration
             </p>
           </div>
 
-          <div className="relative">
+          <div className="relative max-w-4xl mx-auto">
             {/* Timeline line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-600"></div>
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-600 hidden md:block"></div>
             
-            <ul className="space-y-8">
+            <div className="space-y-8">
               {timeline.map((item, index) => (
-                <li 
+                <div 
                   key={index} 
-                  className="relative pl-16 animate-slide-up group"
+                  className="relative md:pl-16 animate-slide-up group"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   {/* Timeline icon */}
-                  <div className="absolute left-3 top-1 w-6 h-6 bg-marketing-600 rounded-full flex items-center justify-center text-white transform transition-all duration-300 group-hover:scale-110 group-hover:bg-marketing-500">
+                  <div className="absolute left-3 top-1 w-6 h-6 bg-marketing-600 rounded-full flex items-center justify-center text-white transform transition-all duration-300 group-hover:scale-110 group-hover:bg-marketing-500 hidden md:flex">
                     {item.icon}
                   </div>
                   
-                  <div className="transform transition-all duration-300 group-hover:translate-x-2">
-                    <h3 className="text-lg font-semibold mb-1 group-hover:text-marketing-400 transition-colors duration-300">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-marketing-400/30 transition-all duration-300 group-hover:bg-white/10">
+                    <h3 className="text-lg font-semibold mb-2 group-hover:text-marketing-400 transition-colors duration-300">
                       {item.title}
                     </h3>
                     <p className="text-sm text-gray-400">{item.period}</p>
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
         {/* Professional SEO & Marketing Tools Section */}
-        <div className="bg-white py-8 md:py-12 mb-8 md:mb-16">
-          {/* Header Section */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mb-4 shadow-md">
-              <Globe className="w-6 h-6 text-white" strokeWidth={1.5} />
+        <div className="bg-gray-50 rounded-2xl py-12 px-6 md:px-8 mb-16">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-marketing-600 to-marketing-700 rounded-2xl mb-4 shadow-lg">
+              <Globe className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               Professional SEO & Marketing Tools
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our comprehensive suite of industry-leading tools designed to boost your digital presence.
+              Industry-leading tools I use to drive digital success
             </p>
           </div>
 
-          {/* Tools Grid */}
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4 md:gap-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9 gap-4 md:gap-6">
               {tools.map((tool, index) => (
                 <ToolCard key={index} tool={tool} />
               ))}

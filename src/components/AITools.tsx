@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Bot } from 'lucide-react';
 
 interface Tool {
   name: string;
@@ -113,65 +114,68 @@ const aiTools: Tool[] = [
 
 const AITools = () => {
   return (
-    <div className="bg-gray-50 py-8 md:py-12 mt-8 md:mt-16 rounded-lg mx-2 md:mx-0">
-      <div className="container mx-auto px-4 md:px-6">
+    <div className="bg-gradient-to-br from-marketing-50 to-blue-50 rounded-2xl py-12 px-6 md:px-8">
+      <div className="container mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-6 md:mb-8 animate-fade-in">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-gray-900">
-            🚀 AI Tools I Use
+        <div className="text-center mb-10 animate-fade-in">
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl mb-4 shadow-lg">
+            <Bot className="w-7 h-7 text-white" strokeWidth={1.5} />
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+            AI Tools I Use
           </h3>
-          <div className="w-12 md:w-16 h-0.5 bg-gradient-to-r from-marketing-500 to-marketing-600 mx-auto rounded-full mb-2 md:mb-3"></div>
-          <p className="text-gray-600 text-xs md:text-sm max-w-lg mx-auto px-4">
-            Essential AI tools for productivity and creativity
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Cutting-edge AI tools that enhance my productivity and creativity
           </p>
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 md:gap-3 lg:gap-4">
-          {aiTools.map((tool, index) => (
-            <a
-              key={index}
-              href={tool.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center p-2 md:p-3 rounded-xl bg-white border border-gray-200 hover:border-marketing-300 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up shadow-sm"
-              style={{
-                animationDelay: `${index * 50}ms`,
-                animationFillMode: 'both'
-              }}
-              title={tool.name}
-            >
-              {/* Logo Container */}
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mb-1 md:mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-110 overflow-hidden border border-gray-100 group-hover:border-marketing-200">
-                <img 
-                  src={tool.logo} 
-                  alt={`${tool.name} logo`}
-                  className="w-5 h-5 md:w-6 md:h-6 object-contain transition-all duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `<span class="text-white font-bold text-xs">${tool.name.charAt(0)}</span>`;
-                      parent.className = parent.className.replace('bg-gray-50', 'bg-gradient-to-br from-marketing-500 to-marketing-600');
-                    }
-                  }}
-                />
-              </div>
-              
-              {/* Tool Name */}
-              <span className="text-xs font-medium text-center text-gray-600 group-hover:text-marketing-700 transition-colors duration-300 leading-tight max-w-full truncate px-1">
-                {tool.name}
-              </span>
-            </a>
-          ))}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4 md:gap-6">
+            {aiTools.map((tool, index) => (
+              <a
+                key={index}
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center p-3 rounded-xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up shadow-sm"
+                style={{
+                  animationDelay: `${index * 30}ms`,
+                  animationFillMode: 'both'
+                }}
+                title={tool.name}
+              >
+                {/* Logo Container */}
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-2 bg-gray-50 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105 overflow-hidden border border-gray-100 group-hover:border-purple-200 p-2">
+                  <img 
+                    src={tool.logo} 
+                    alt={`${tool.name} logo`}
+                    className="w-6 h-6 object-contain transition-all duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">${tool.name.charAt(0)}</div>`;
+                      }
+                    }}
+                  />
+                </div>
+                
+                {/* Tool Name */}
+                <span className="text-xs font-medium text-center text-gray-600 group-hover:text-purple-700 transition-colors duration-300 leading-tight max-w-full truncate">
+                  {tool.name}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-6 md:mt-8 text-center">
-          <span className="text-gray-500 text-xs px-4">
-            Constantly exploring new AI innovations
-          </span>
+        <div className="mt-8 text-center">
+          <p className="text-gray-500 text-sm">
+            Constantly exploring new AI innovations to stay ahead of the curve
+          </p>
         </div>
       </div>
     </div>
